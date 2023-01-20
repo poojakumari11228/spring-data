@@ -9,7 +9,6 @@ import com.lab1.lab1.repo.UserRepo;
 import com.lab1.lab1.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner.Mode;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +31,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto findUserById(long id) {
-        System.out.println("***************");
         return modelMapper.map(userRepo.findById(id).get(),new UserDto().getClass());
     }
 

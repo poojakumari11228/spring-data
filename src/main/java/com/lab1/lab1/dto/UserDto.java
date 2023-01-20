@@ -8,5 +8,5 @@ import java.util.List;
 public class UserDto {
     long id;
     String name;
-    List<PostDto> postDtos;
+    List<PostDto> posts;
 }

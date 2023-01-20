@@ -15,12 +15,11 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import jakarta.persistence.Entity;
 import org.hibernate.engine.internal.Cascade;
+import org.modelmapper.internal.bytebuddy.dynamic.loading.InjectionClassLoader.Strategy;
 
 @Entity
 @Table(name = "users")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
     @Id
@@ -28,7 +27,7 @@ public class User {
     long id;
     String name;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     public List<Post> posts;
 
 }

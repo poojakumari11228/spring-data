@@ -11,7 +11,6 @@ public interface UserRepo extends JpaRepository<User, Long> {
     @Query("SELECT u FROM User u JOIN FETCH u.posts WHERE SIZE(u.posts) > 1")
     List<User> findUsersWithMoreThanOnePost();
 
-//    @Query("SELECT u FROM User u JOIN FETCH u.posts")
-//    List<User> findAllUsersWithPosts();
+
 
 }
